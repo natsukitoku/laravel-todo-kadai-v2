@@ -86,7 +86,7 @@
                                     <h5 class="card-title ms-1 mb-0">
                                         @if ($todo->done)
                                            <s>{{ $todo->content }}</s>
-                                           <p>{{ $todo->description }}</p>
+                                           <s>{{ $todo->description }}</s>
                                         @else
                                            {{ $todo->content}}
                                            <p>{{ $todo->description }}</p>
@@ -100,6 +100,7 @@
                                                 @csrf
                                                 @method('patch')
                                                 <input type="hidden" name="content" value="{{ $todo->content }}">
+                                                <input type="hidden" name="description" value="{{ $todo->description }}">
                                                 @if ($todo->done)
                                                    <input type="hidden" name="done" value="false">
                                                    <button type="submit" class="dropdown-item btn btn-link">未完了</button>
