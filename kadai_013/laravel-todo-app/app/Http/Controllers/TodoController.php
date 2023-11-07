@@ -18,6 +18,7 @@ class TodoController extends Controller
     {
         $request->validate([
             'content' => 'required',
+            'description' => 'required',
         ]);
 
         $todo = new Todo();
@@ -40,6 +41,7 @@ class TodoController extends Controller
     {
         $request->validate([
             'content' => 'required',
+            'description' => 'required',
         ]);
 
         $todo->content = $request->input('content');
